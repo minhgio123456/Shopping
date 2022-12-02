@@ -46,8 +46,8 @@
 				id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
 				<div class="navbar-nav w-100">
 					<a th:each="p: ${listDM}"
-						th:href="@{|/product?cid=${p.probrand_id}|}"
-						class="nav-item nav-link" th:utext="${p.probrand_name}"></a>
+						th:href="@{|/productsBrand/${p.probrand_id}|}"
+						class="nav-item nav-link" th:utext="${p.probrand_name}" th:attr="ng-click=@{|loadBrand(${p.probrand_id})|}"></a><!-- th:href="@{|/product?cid=${p.probrand_id}|}" -->
 				</div>
 			</nav>
 		</div>
@@ -77,6 +77,9 @@
 									href="checkout.html" class="dropdown-item">Voucher</a>
 							</div>
 						</div>
+						<a href="/contact" class="nav-item nav-link">Contact</a>
+						<a href="/login" class="nav-item nav-link">Login</a>
+						<a href="/logout" class="nav-item nav-link">LogOut</a>
 					</div>
 					<div class="navbar-nav ml-auto py-0 d-none d-lg-block">
 						<a href="" class="btn px-0"> <i

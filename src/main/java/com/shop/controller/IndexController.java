@@ -23,4 +23,16 @@ public class IndexController {
 		model.addAttribute("listSP", proService.findTop6PageIndex());
 		return "layout/indexView";
 	}
+	
+	@RequestMapping("/contact")
+	public String contact(Model model) {
+		model.addAttribute("listDM", proBrandService.findAll());
+		return "contact/contact";
+	}
+	
+	@RequestMapping("/login")
+	public String login(Model model) {
+		model.addAttribute("listDM", proBrandService.findAll());
+		return "user/login";
+	}
 }

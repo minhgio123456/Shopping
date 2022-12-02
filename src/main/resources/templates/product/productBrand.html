@@ -8,22 +8,6 @@
 	<main>
 		<div class="container" ng-controller="MyController">
 			<div class="row">
-				<!--  <div th:each="p: ${listSP}" class="col-md-3 mb-2">
-					<div class="card">
-						<img th:src="@{|/img/product/${p.product_img}|}" class="card-img-top p-2" alt="..." style="width: 100%;height: 250px;">
-						<div class="card-body">
-							<a th:href="@{|/product/${p.product_id}|}"><h5 class="card-title" th:text="${p.product_name}" style="font-size: 15px;"></h5></a>
-						</div>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item" th:text="'Giá' + ': ' + ${#numbers.formatInteger(p.product_price,3,'POINT')}"></li>
-							<li class="list-group-item" th:text="'Danh mục: ' + ${p.product_brand.probrand_name}"></li>
-						</ul>
-						<div class="card-body text-right">
-							<a href="#" class="btn btn-primary" style="border-radius: 10px;font-size: 12px;font-weight: 900;">Mua Hàng</a> <button href="#"
-								class="btn btn-secondary" style="border-radius: 10px;font-size: 12px;font-weight: 900;" th:attr="ng-click=@{|cart.add(${p.product_id})|}">Thêm vào giỏ</button>
-						</div>
-					</div>
-				</div>-->
 				<div dir-paginate="meal in meals | filter:q | itemsPerPage: pageSize" current-page="currentPage" class="col-md-3 mb-2" >
 					<div class="card">
 						<img ng-src="/img/product/{{meal.product_img}}" class="card-img-top p-2" alt="..." style="width: 100%;height: 250px;">
@@ -40,16 +24,6 @@
 						</div>
 					</div>
 				</div>
-				<!--  <div class="panel panel-default">
-		            <div class="panel-body">
-		
-		              <ul>
-		                <li dir-paginate="meal in meals | filter:q | itemsPerPage: pageSize" current-page="currentPage">{{ meal }}</li>
-		                
-		              </ul>
-		            </div>
-		          </div>-->
-		        
 			</div>
 			<div class="row">
 				<div ng-controller="OtherController" class="m-auto">
@@ -57,7 +31,6 @@
 		          <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" ></dir-pagination-controls>
 		          </div>
 		        </div>
-		        <!-- <button class="nav-item nav-link" ng-click="loadBrand(2)"> -->
 			</div>
 			
 		</div>

@@ -44,6 +44,12 @@ public class ProductController {
 		return "product/productDetails";
 	}
 	
+	@RequestMapping("/productsBrand/{id}")
+	public String productBrand(Model model, @PathVariable("id") Integer id) {
+		model.addAttribute("listDM", proBrandService.findAll());
+		return "product/productBrand";
+	}
+	
 //	@RequestMapping("/product/brand/{id}")
 //	public String productBrand(Model model, @PathVariable("id") Integer id) {
 //		Product item = proService.findById(id);
