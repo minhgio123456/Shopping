@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org" th:fragment="dynamic(main,title)">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>AdminLTE 3 | Gallery</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+<!-- Ekko Lightbox -->
+<link rel="stylesheet" href="plugins/ekko-lightbox/ekko-lightbox.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/adminlte.min.css">
+<!-- Google Font: Source Sans Pro -->
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+	rel="stylesheet">
+</head>
+<style type="text/css">
+.home-blog {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+@media ( min-width : 992px) {
+	.home-blog {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+}
+
+.home-blog .section-title {
+	padding-bottom: 15px;
+}
+
+.home-blog .media {
+	margin-top: 50px;
+}
+
+@media ( min-width : 768px) {
+	.home-blog .media {
+		margin-top: 30px;
+	}
+}
+
+.bg-sand {
+	background-color: #f5f5f6;
+}
+
+.media.blog-media {
+	margin-top: 30px;
+	position: relative;
+	display: block;
+}
+
+@media ( min-width : 992px) {
+	.media.blog-media {
+		display: table;
+	}
+}
+
+.media.blog-media .circle {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.5);
+	white-space: nowrap;
+	position: absolute;
+	padding: 0;
+	top: 20px;
+	left: 20px;
+	text-align: center;
+	box-shadow: none;
+	transform: translateX(0);
+	color: #fff;
+	transition: background-color 0.3s ease;
+}
+
+.media.blog-media .circle .day {
+	color: #fff;
+	transition: color 0.25s ease;
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 1;
+	margin-top: 12px;
+}
+
+.media.blog-media .circle .month {
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.media.blog-media>a {
+	position: relative;
+	display: block;
+}
+
+@media ( min-width : 992px) {
+	.media.blog-media>a {
+		display: table-cell;
+		vertical-align: top;
+		min-width: 200px;
+	}
+}
+
+@media ( min-width : 1200px) {
+	.media.blog-media>a {
+		min-width: 230px;
+	}
+}
+
+.media.blog-media>a:before {
+	position: absolute;
+	content: "";
+	top: 15px;
+	left: 15px;
+	right: 15px;
+	bottom: 15px;
+	opacity: 0;
+	transform: scale(0);
+	transition: transform 0.3s ease, opacity 0.3s;
+	background: rgba(12, 198, 82, 0.7);
+}
+
+.media.blog-media>a img {
+	width: 100%;
+}
+
+.media.blog-media:hover>a:before {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.media.blog-media:hover .circle {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.media.blog-media:hover .circle .day, .media.blog-media:hover .circle .month
+	{
+	color: #222;
+}
+
+.media.blog-media:hover .media-body h5 {
+	color: #0cc652;
+}
+
+.media.blog-media:hover .media-body a.post-link {
+	color: #0cc652;
+	text-decoration: underline;
+}
+
+.media.blog-media .media-body {
+	border: 1px solid #efeff3;
+	padding: 30px 30px 10px;
+	font-size: 14px;
+	background: #fff;
+	border-top: none;
+}
+
+@media ( min-width : 992px) {
+	.media.blog-media .media-body {
+		padding: 15px 20px 10px;
+		border-top: 1px solid #efeff3;
+		border-left: none;
+		display: table-cell;
+		vertical-align: top;
+	}
+}
+
+@media ( min-width : 1200px) {
+	.media.blog-media .media-body {
+		padding: 30px 20px 10px;
+	}
+}
+
+.media.blog-media .media-body h5 {
+	transition: color 0.3s ease;
+	margin-bottom: 15px;
+}
+
+@media ( min-width : 992px) {
+	.media.blog-media .media-body h5 {
+		font-size: 15px;
+	}
+}
+
+@media ( min-width : 1200px) {
+	.media.blog-media .media-body h5 {
+		margin-bottom: 15px;
+		font-size: 18px;
+	}
+}
+
+.media.blog-media .media-body a.post-link {
+	display: block;
+	color: #222;
+	font-size: 11px;
+	padding: 23px 0;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+@media ( min-width : 992px) {
+	.media.blog-media .media-body a.post-link {
+		padding: 7px 0;
+	}
+}
+
+@media ( min-width : 1200px) {
+	.media.blog-media .media-body a.post-link {
+		padding: 23px 0;
+	}
+}
+
+.media.blog-media .media-body ul {
+	position: relative;
+	padding: 10px 0 0;
+}
+
+.media.blog-media .media-body ul li {
+	display: inline-block;
+	width: 49%;
+	position: relative;
+}
+
+.media.blog-media .media-body ul li:before {
+	position: absolute;
+	content: "";
+	top: 5px;
+	left: 0;
+	width: 1px;
+	height: 14px;
+	background: #eeeef2;
+}
+
+.media.blog-media .media-body ul li:first-child:before {
+	visibility: hidden;
+}
+
+.media.blog-media .media-body ul:before {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: #eeeef2;
+}
+</style>
+<body>
+	<div class="wrapper">
+		<div th:replace="admin/navandmainside"></div>
+		<!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<div th:replace="admin/logoandsidebar"></div>
+			<!-- /.sidebar -->
+			<div th:replace="admin/sidebarmenu"></div>
+		</aside>
+
+
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<div class="container-fluid">
+					<div class="row mb-2">
+						<div class="col-sm-6">
+							<h1 th:text="${title}"></h1>
+						</div>
+						<div class="col-sm-6">
+							<ol class="breadcrumb float-sm-right">
+								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item active" th:text="${title}"></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<!-- /.container-fluid -->
+			</section>
+
+			<!-- Main content -->
+			<section class="content" th:insert="${main}"></section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+
+
+
+		<div th:replace="admin/footer"></div>
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Control sidebar content goes here -->
+		</aside>
+		<!-- /.control-sidebar -->
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- jQuery -->
+	<script src="../plugins/jquery/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- jQuery UI -->
+	<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+	<!-- Ekko Lightbox -->
+	<script src="../plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+	<!-- AdminLTE App -->
+	<script src="../dist/js/adminlte.min.js"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="../dist/js/demo.js"></script>
+	<!-- Filterizr-->
+	<script src="../plugins/filterizr/jquery.filterizr.min.js"></script>
+	<!-- Page specific script -->
+	<script>
+		$(function() {
+			$(document).on('click', '[data-toggle="lightbox"]',
+					function(event) {
+						event.preventDefault();
+						$(this).ekkoLightbox({
+							alwaysShowClose : true
+						});
+					});
+
+			$('.filter-container').filterizr({
+				gutterPixels : 3
+			});
+			$('.btn[data-filter]').on('click', function() {
+				$('.btn[data-filter]').removeClass('active');
+				$(this).addClass('active');
+			});
+		})
+	</script>
+</body>
+</html>

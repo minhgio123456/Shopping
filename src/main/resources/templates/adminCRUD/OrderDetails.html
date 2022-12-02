@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/index :: dynamic(~{::main},'OrderDetails')}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<main>
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">LIST</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">SET</a>
+		  </li>
+		  
+		</ul>
+		<div class="tab-content" id="myTabContent">
+		  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<table class="table table-hover">
+				  <thead class="thead-dark">
+				    <tr>
+				      <th scope="col">ID</th>
+				      <th scope="col">Quantity</th>
+				      <th scope="col">Price</th>
+				      <th scope="col">Product ID</th>
+				      <th scope="col">Order ID</th>
+				      <th scope="col">Create Date</th>
+				      <th scope="col">Status</th>
+				      <th scope="col">Delete</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>True</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>True</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">2</th>
+				      <td>Jacob</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>True</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>True</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">3</th>
+				      <td>Larry</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>False</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>True</td>
+				    </tr>
+				  </tbody>
+				</table>
+		  </div>
+		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<form>
+				  <div class="form-group">
+				    <label for="idOrderDe">ID</label>
+				    <input type="text" class="form-control" id="idOrderDe" readonly="readonly">
+				  </div>
+				  <div class="form-group">
+				    <label for="quantityOrderDe">Quantity</label>
+				    <input type="text" class="form-control" id="quantityOrderDe">
+				  </div>
+				  <div class="form-group">
+				    <label for="priceOrderDe">Price</label>
+				    <input type="text" class="form-control" id="priceOrderDe">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleFormControlSelect1">Product ID</label>
+				    <select class="form-control" id="exampleFormControlSelect1">
+				      <option>1</option>
+				      <option>2</option>
+				      <option>3</option>
+				      <option>4</option>
+				      <option>5</option>
+				    </select>
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleFormControlSelect2">Order ID</label>
+				    <select class="form-control" id="exampleFormControlSelect2">
+				      <option>1</option>
+				      <option>2</option>
+				      <option>3</option>
+				      <option>4</option>
+				      <option>5</option>
+				    </select>
+				  </div>
+				  <div class="form-group">
+				    <label>Create Date</label>
+				    <input type="date">
+				  </div>
+				  <div class="form-group">
+				    <label for="statusOrder">Status</label>
+				    <input type="text" class="form-control" id="statusOrder">
+				  </div>
+				  Trạng Thái: 
+				  <div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+					  <label class="form-check-label" for="inlineRadio1">Đã xóa</label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <label class="form-check-label" for="inlineRadio2">Chưa xóa</label>
+					</div>
+				  
+				  <button type="submit" class="btn btn-primary mt-2">Submit</button>
+				</form>
+		  </div>
+		</div>
+	</main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <main>
+        <div class="shadow p-3 mb-5 mx-5 bg-body rounded">Home / Shop / Details</div>
+        
+        <div class="shadow p-3 mb-5 mx-5 bg-body rounded">
+            <div class="row">
+                <div class="col-md-4">
+                    <img th:src="@{|/img/product/${item.product_img}|}" alt="" style="width: 100%;padding: 5px;">
+                </div>
+                <div class="col-md-8">
+                    <div class="item__item">
+                    	<span>Tên sản phẩm: </span><span style="font-weight: 700;" th:text="${item.product_name}"></span>
+                    </div>
+                    <div class="item__item">
+                    	<span>Giá: </span><span style="font-weight: 700;" th:text="${#numbers.formatInteger(item.product_price,3,'POINT')} + ' VND'"></span> 
+                    </div>
+                    <div class="item__item">
+                    	<span>Thương hiệu: </span><span style="font-weight: 700;" th:text="${item.product_brand.probrand_name}"></span>
+                    </div>
+                    <div class="item__item">
+                    	<span>Số lượng: </span><span style="font-weight: 700;" th:text="${item.product_quantity}"></span>
+                    </div>
+                    <div class="item__item">
+                    	<span>Mô tả: </span><span style="font-weight: 700;" th:text="${item.product_desc}"></span>
+                    </div>
+                    <div class="item__item">
+                    	<button class="btn primaryBTN">Mua hàng</button>
+                    	<button class="btn btn-warning" style="border-radius: 5px;" th:attr="ng-click=@{|cart.add(${x.product_id})|}">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow p-4 mb-5 mx-5 bg-body rounded">
+        	<h1 class="text-center">Sản phẩm cùng loại</h1>
+        	<div class="row">
+        		<div class="col-md-3" th:each="x: ${item.product_brand.products}">
+        			<div class="card mb-3" style="width: 18rem;">
+					  <ul class="list-group list-group-flush">
+					    <li class="list-group-item" >
+					    	<div class="card">
+							  <img th:src="@{|/img/product/${x.product_img}|}" class="card-img-top" alt="..." style="width: 100%;">
+							  <div class="card-body">
+							  	<a th:href="@{|/product/${x.product_id}|}" style="color: black;">
+							  		<p class="card-text">[[${x.product_name}]]</p>
+							  	</a>
+							    
+							  </div>
+							</div>
+						</li>
+					  </ul>
+					</div>
+        		</div>
+            	
+            </div>
+        </div>
+    </main>
+</body>
+</html>

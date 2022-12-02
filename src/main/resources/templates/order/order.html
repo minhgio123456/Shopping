@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="m-2 shadow-lg p-3 bg-body rounded">
+						<h2>Billing Address</h2>
+						<form>
+							<div class="mb-3">
+							  <label for="exampleInputEmail1" class="form-label">Username</label>
+							  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+							</div>
+							<div class="mb-3">
+							  <label for="exampleInputPassword1" class="form-label">NumberPhone</label>
+							  <input type="text" class="form-control" id="exampleInputPassword1">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Email</label>
+								<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">address</label>
+								<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+							  </div>
+						  </form>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="m-2 shadow-lg p-3 bg-body rounded">
+						<h2>Order Total</h2>
+						<div class="row">
+							<div class="col-md-8">
+								Product Name
+							</div>
+							<div class="col-md-4 text-right">
+								...$
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-8">
+								Product Name
+							</div>
+							<div class="col-md-4 text-right">
+								...$
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-8">
+								Product Name
+							</div>
+							<div class="col-md-4 text-right	">
+								...$
+							</div>
+						</div>
+						<hr/>
+						<div class="row">
+							<div class="col-md-8">
+								Subtotal
+							</div>
+							<div class="col-md-4 text-right">
+								...$
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-8">
+								Shipping
+							</div>
+							<div class="col-md-4 text-right">
+								...$
+							</div>
+						</div>
+						<hr/>
+						<div class="row">
+							<div class="col-md-8">
+								Total
+							</div>
+							<div class="col-md-4 text-right">
+								...$
+							</div>
+						</div>
+						<div class="row">
+							<a href="" class="btn btn-primary rounded-pill m-auto">Check out</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

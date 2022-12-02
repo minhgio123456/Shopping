@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/index :: dynamic(~{::main},'User')}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>	
+	<main>
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">LIST</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">SET</a>
+		  </li>
+		  
+		</ul>
+		<div class="tab-content" id="myTabContent">
+		  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<table class="table table-hover">
+				  <thead class="thead-dark">
+				    <tr>
+				      <th scope="col">ID</th>
+				      <th scope="col">Username</th>
+				      <th scope="col">Fullname</th>
+				      <th scope="col">Password</th>
+				      <th scope="col">Image</th>
+				      <th scope="col">Email</th>
+				      <th scope="col">Phone</th>
+				      <th scope="col">Role ID</th>
+				      <th scope="col">Delete</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>True</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>True</td>
+				      <td>Mark</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">2</th>
+				      <td>Jacob</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>True</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>True</td>
+				      <td>Mark</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">3</th>
+				      <td>Larry</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>False</td>
+				      <td>Mark</td>
+				      <td>Mark</td>
+				      <td>True</td>
+				      <td>Mark</td>
+				    </tr>
+				  </tbody>
+				</table>
+		  </div>
+		  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<form>
+				  <div class="form-group">
+				    <label for="idUser">ID</label>
+				    <input type="text" class="form-control" id="idUser" readonly="readonly">
+				  </div>
+				  <div class="form-group">
+				    <label for="usernameUser">Username</label>
+				    <input type="text" class="form-control" id="usernameUser">
+				  </div>
+				  <div class="form-group">
+				    <label for="fullnameUser">Fullname</label>
+				    <input type="text" class="form-control" id="fullnameUser">
+				  </div>
+				  <div class="form-group">
+				    <label for="passwordUser">Password</label>
+				    <input type="password" class="form-control" id="passwordUser">
+				  </div>
+				  <div class="form-group">
+				    <div class="form-group">
+					    <label for="exampleFormControlFile1">Image</label>
+					    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+					  </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="emailUser">Email</label>
+				    <input type="email" class="form-control" id="emailUser">
+				  </div>
+				  <div class="form-group">
+				    <label for="phoneUser">Phone</label>
+				    <input type="text" class="form-control" id="phoneUser">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleFormControlSelect2">Role ID</label>
+				    <select class="form-control" id="exampleFormControlSelect2">
+				      <option>1</option>
+				      <option>2</option>
+				      <option>3</option>
+				      <option>4</option>
+				      <option>5</option>
+				    </select>
+				  </div>
+				  Trạng Thái: 
+				  <div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+					  <label class="form-check-label" for="inlineRadio1">Đã xóa</label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <label class="form-check-label" for="inlineRadio2">Chưa xóa</label>
+					</div>
+				  
+				  <button type="submit" class="btn btn-primary mt-2">Submit</button>
+				</form>
+		  </div>
+		</div>
+	</main>
+</body>
+</html>

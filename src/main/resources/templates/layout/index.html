@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<html xmlns="http://www.thymeleaf.org" th:fragment="dynamic(main)" >
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
@@ -14,13 +14,41 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    
+    <!-- Angular 1.6.9 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js" integrity="sha512-zVjBbEjCeSbeIW2napMaT8VYXI/akKe9Yq2x2sRFiIX+onOjlFkqHVks/7IPSPLnmlHyoH8tFcL3PHdPCXC9ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style2.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+    
+    <style>
+    *{
+    	box-sizing: border-box;
+    }
+  	.text:hover {
+    	overflow: visible !important;
+	} 
+	.primaryBTN{
+		color: #fff;
+	    background-color: #007bff;
+	    border-color: #007bff;
+	    border-radius: 5px;
+	}
+	.primaryBTN:hover {
+		color: #fff;
+	    background-color: #0069d9;
+	    border-color: #0062cc;
+	}
+	.pRight {
+		padding-right: 220px !important;
+	}
+  </style>
 </head>
-<body>
+<body ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
 	<div th:replace="/layout/header"></div>
 	<div th:replace="${main}"></div>
 	<div th:replace="/layout/footer"></div>
@@ -36,14 +64,17 @@
 	<!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+    <script src="/mail/jqBootstrapValidation.min.js"></script>
+    <script src="/mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/main2.js"></script>
+    <script src="/script.js"></script>
+    <script src="/dirPagination.js"></script>
 </body>
 </html>
