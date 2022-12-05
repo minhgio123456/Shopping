@@ -5,8 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.shop.entity.Users;
 import com.shop.service.Product_BrandsService;
 import com.shop.service.ProductsService;
+import com.shop.service.UsersService;
 
 @Controller
 public class IndexController {
@@ -16,6 +18,9 @@ public class IndexController {
 	
 	@Autowired
 	ProductsService proService;
+	
+	@Autowired
+	UsersService uSer;
 	
 	@RequestMapping("/index")
 	public String index(Model model) {

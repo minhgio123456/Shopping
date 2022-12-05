@@ -148,7 +148,7 @@ myApp.controller("MyController", function ($scope, $http) {
       .then((resp) => {
         //$scope.items = resp.data;
         $scope.meals = resp.data;
-        console.log("Success", resp);
+        console.log("Success", resp.data);
       })
       .catch((error) => {
         console.log("Error", error);

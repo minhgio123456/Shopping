@@ -18,10 +18,8 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "User")
-public class User {
+public class Users {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer user_id;
 	String user_username;
 	String user_fullname;
 	String user_password;

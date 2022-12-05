@@ -1,5 +1,8 @@
 package com.shop.service;
 
-public interface UsersService {
+import com.shop.entity.Users;
 
+public interface UsersService {
+	
+	Users findById(String id);
 }

@@ -77,9 +77,17 @@
 									href="checkout.html" class="dropdown-item">Voucher</a>
 							</div>
 						</div>
-						<a href="/contact" class="nav-item nav-link">Contact</a>
-						<a href="/login" class="nav-item nav-link">Login</a>
-						<a href="/logout" class="nav-item nav-link">LogOut</a>
+						<a href="/contact" class="nav-item nav-link">Liên hệ</a>
+						<th:block th:unless="${#request.remoteUser}">
+							<a th:href="@{/security/login/form}" class="nav-item nav-link">Đăng nhập</a>
+						</th:block>
+						<th:block th:if="${#request.remoteUser}">
+							<a th:href="@{/security/logoff}" class="nav-item nav-link">Đăng xuất</a>
+							<a th:href="@{/order/list}" class="nav-item nav-link">Đơn hàng</a>
+							<a th:href="@{/admin}" class="nav-item nav-link" 
+								th:if="${#request.isUserInRole('admin') or #request.isUserInRole('sale')}">Admin</a>
+						</th:block>
+						
 					</div>
 					<div class="navbar-nav ml-auto py-0 d-none d-lg-block">
 						<a href="" class="btn px-0"> <i
@@ -148,7 +156,7 @@
 														<td colspan="2" class="hidden-xs"></td>
 														<td class="hidden-xs text-center"><strong>Tổng
 																tiền {{cart.amount | number : 0}} đ</strong></td>
-														<td><a href="http://hocwebgiare.com/" style="border-radius: 10px;"
+														<td><a href="/order/list" style="border-radius: 10px;"
 															class="btn btn-success btn-block">Thanh toán <i
 																class="fa fa-angle-right"></i></a></td>
 													</tr>

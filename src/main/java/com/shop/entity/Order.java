@@ -29,9 +29,10 @@ public class Order {
 	@Temporal(TemporalType.DATE)
 	Date order_createdate = new Date();
 	Boolean order_isdelete;
+	String status;
 	
-	@ManyToOne @JoinColumn(name = "order_userid")
-	User user;
+	@ManyToOne @JoinColumn(name = "order_usernameid")
+	Users user;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "order")
